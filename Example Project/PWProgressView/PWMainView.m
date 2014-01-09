@@ -32,9 +32,9 @@
 - (void)layoutSubviews
 {
     self.progressView.frame = CGRectMake(50.0f,
-                                         50.0f,
                                          100.0f,
-                                         100.0f);
+                                         50.0f,
+                                         50.0f);
     
     self.progressSlider.frame = CGRectMake(15.0f,
                                            300.0f,
