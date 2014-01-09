@@ -9,14 +9,16 @@
 #import "PWMainView.h"
 #import "PWProgressView.h"
 
+static const CGSize PWProgressViewSize      = {100.0f, 100.0f};
+static const CGSize PWProgressSliderSize    = {300.0f, 34.0f};
+static const CGFloat PWVerticalSpacing      = 20.0f;
+
 @implementation PWMainView
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor redColor];
-        
         self.progressView = [[PWProgressView alloc] init];
         [self addSubview:self.progressView];
         
@@ -31,15 +33,15 @@
 
 - (void)layoutSubviews
 {
-    self.progressView.frame = CGRectMake(50.0f,
-                                         100.0f,
-                                         50.0f,
-                                         50.0f);
+    self.progressView.frame = CGRectMake(CGRectGetMidX(self.frame) - (PWProgressViewSize.width / 2.0f),
+                                         CGRectGetMidY(self.frame) - (PWProgressViewSize.height / 2.0f),
+                                         PWProgressViewSize.width,
+                                         PWProgressViewSize.height);
     
-    self.progressSlider.frame = CGRectMake(15.0f,
-                                           300.0f,
-                                           200.0f,
-                                           25.0f);
+    self.progressSlider.frame = CGRectMake(CGRectGetMidX(self.frame) - (PWProgressSliderSize.width / 2.0f),
+                                           CGRectGetMaxY(self.progressView.frame) + PWVerticalSpacing,
+                                           PWProgressSliderSize.width,
+                                           PWProgressSliderSize.height);
 }
 
 @end
