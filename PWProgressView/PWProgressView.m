@@ -9,6 +9,10 @@
 #import "PWProgressView.h"
 #import <QuartzCore/QuartzCore.h>
 
+static const CGFloat PWCenterHoleInset = 10.0f;
+static const CGFloat PWProgressShapeInset = 2.0f;
+
+
 @interface PWProgressView ()
 
 @property (nonatomic, strong) CAShapeLayer *boxShape;
@@ -59,23 +63,26 @@
     
     self.boxShape.frame = self.frame;
     
-    [path appendPath:[UIBezierPath bezierPathWithRoundedRect:CGRectMake(-0.5f * CGRectGetWidth(self.bounds) + 10.0f,
-                                                                        -0.5f * CGRectGetHeight(self.bounds) + 10.0f,
-                                                                        CGRectGetWidth(self.bounds) - 20.0f,
-                                                                        CGRectGetHeight(self.bounds) - 20.0f)
-                                                cornerRadius:(CGRectGetWidth(self.bounds) - 20.0f) / 2.0f]];
+    [path appendPath:[UIBezierPath bezierPathWithRoundedRect:CGRectMake(-0.5f * CGRectGetWidth(self.bounds) + PWCenterHoleInset,
+                                                                        -0.5f * CGRectGetHeight(self.bounds) + PWCenterHoleInset,
+                                                                        CGRectGetWidth(self.bounds) - PWCenterHoleInset * 2,
+                                                                        CGRectGetHeight(self.bounds) - PWCenterHoleInset * 2)
+                                                cornerRadius:(CGRectGetWidth(self.bounds) - PWCenterHoleInset * 2) / 2.0f]];
     
     [path setUsesEvenOddFillRule:YES];
     
     self.boxShape.path = path.CGPath;
     
-    self.progressShape.path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(32.5f,
-                                                                                 32.5f,
-                                                                                 CGRectGetWidth(self.bounds) - 65.0f,
-                                                                                 CGRectGetHeight(self.bounds) - 65.0f)
-                                                         cornerRadius:(CGRectGetWidth(self.bounds) - 65.0f) / 2.0f].CGPath;
+    CGFloat diameter = CGRectGetWidth(self.bounds) - (2 * PWCenterHoleInset) - (2 * PWProgressShapeInset);
+    CGFloat radius = diameter / 2.0f;
     
-    self.progressShape.lineWidth = CGRectGetWidth(self.bounds) - 65.0f;
+    self.progressShape.path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake((CGRectGetWidth(self.bounds) / 2.0f) - (radius / 2.0f),
+                                                                                 (CGRectGetHeight(self.bounds) / 2.0f) - (radius / 2.0f),
+                                                                                 radius,
+                                                                                 radius)
+                                                         cornerRadius:radius].CGPath;
+    
+    self.progressShape.lineWidth = radius;
 }
 
 - (void)setProgress:(float)progress
