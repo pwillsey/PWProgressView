@@ -9,8 +9,12 @@
 #import "PWProgressView.h"
 #import <QuartzCore/QuartzCore.h>
 
-static const CGFloat PWCenterHoleInsetRatio     = 0.1f;
-static const CGFloat PWProgressShapeInsetRatio  = 0.02f;
+static const CGFloat PWCenterHoleInsetRatio             = 0.1f;
+static const CGFloat PWProgressShapeInsetRatio          = 0.02f;
+static const CGFloat PWDefaultAlpha                     = 0.45f;
+static const CGFloat PWDefaultCornerRadius              = 5.0f;
+static const CGFloat PWScaleAnimationScaleFactor        = 2.0f;
+static const CFTimeInterval PWScaleAnimationDuration    = 0.5;
 
 @interface PWProgressView ()
 
@@ -30,9 +34,9 @@ static const CGFloat PWProgressShapeInsetRatio  = 0.02f;
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.layer.cornerRadius = 5.0f;
+        self.layer.cornerRadius = PWDefaultCornerRadius;
         self.clipsToBounds = YES;
-        self.alpha = 0.45f;
+        self.alpha = PWDefaultAlpha;
         
         self.boxShape = [CAShapeLayer layer];
         
@@ -101,8 +105,8 @@ static const CGFloat PWProgressShapeInsetRatio  = 0.02f;
 
     if (_progress == 1.0f) {
         CABasicAnimation *scaleAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
-        scaleAnimation.toValue = @2.0f;
-        scaleAnimation.duration = 0.5f;
+        scaleAnimation.toValue = @(PWScaleAnimationScaleFactor);
+        scaleAnimation.duration = PWScaleAnimationDuration;
         scaleAnimation.removedOnCompletion = NO;
         scaleAnimation.autoreverses = NO;
         scaleAnimation.fillMode = kCAFillModeForwards;
