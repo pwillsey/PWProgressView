@@ -52,7 +52,7 @@
 {
     float progress = self.mainView.progressSlider.value;
     
-    [self.mainView.progressView setProgress:progress animated:NO];
+    [self.mainView.progressView setProgress:progress];
 }
 
 @end

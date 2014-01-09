@@ -9,14 +9,10 @@
 #import "PWProgressView.h"
 #import <QuartzCore/QuartzCore.h>
 
-static const NSTimeInterval PWProgressViewAnimationDuration = 0.25f;
-
 @interface PWProgressView ()
 
 @property (nonatomic, strong) CAShapeLayer *boxShape;
 @property (nonatomic, strong) CAShapeLayer *progressShape;
-@property (nonatomic, strong) NSMutableArray *animationQueue;
-@property (assign) NSInteger activeAnimations;
 
 @end
 
@@ -34,9 +30,6 @@ static const NSTimeInterval PWProgressViewAnimationDuration = 0.25f;
         self.layer.cornerRadius = 5.0f;
         self.clipsToBounds = YES;
         self.alpha = 0.45f;
-
-        self.animationQueue = [[NSMutableArray alloc] init];
-        self.activeAnimations = 0;
         
         self.boxShape = [CAShapeLayer layer];
         
@@ -85,20 +78,16 @@ static const NSTimeInterval PWProgressViewAnimationDuration = 0.25f;
     self.progressShape.lineWidth = CGRectGetWidth(self.bounds) - 65.0f;
 }
 
-- (void)setProgress:(float)progress animated:(BOOL)animated
+- (void)setProgress:(float)progress
 {
-    if (animated) {
-        [self animateProgress:progress];
-    } else {
-        self.progressShape.strokeStart = progress;
-    }
-    
+    self.progressShape.strokeStart = progress;
+
     if (_progress == 1.0f && progress < 1.0f) {
         [self.boxShape removeAllAnimations];
     }
-    
+
     _progress = [self pinnedProgress:progress];
-    
+
     if (_progress == 1.0f) {
         CABasicAnimation *scaleAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
         scaleAnimation.toValue = @2.0f;
@@ -110,57 +99,12 @@ static const NSTimeInterval PWProgressViewAnimationDuration = 0.25f;
     }
 }
 
-- (void)setProgress:(float)progress
-{
-    [self setProgress:progress animated:NO];
-}
-
 - (float)pinnedProgress:(float)progress
 {
     float pinnedProgress = MAX(0.0f, progress);
     pinnedProgress = MIN(1.0f, progress);
     
     return pinnedProgress;
-}
-
-- (void)animateProgress:(float)progress
-{
-    CABasicAnimation *pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeStart"];
-    pathAnimation.duration = PWProgressViewAnimationDuration;
-    
-    pathAnimation.fromValue = [NSNumber numberWithFloat:self.progress];
-    pathAnimation.toValue = [NSNumber numberWithFloat:progress];
-    pathAnimation.removedOnCompletion = NO;
-    pathAnimation.fillMode = kCAFillModeForwards;
-    pathAnimation.repeatCount = 0;
-    pathAnimation.autoreverses = NO;
-    pathAnimation.delegate = self;
-    
-    if (self.activeAnimations > 0) {
-        [self.animationQueue addObject:pathAnimation];
-    } else {
-        [self.progressShape addAnimation:pathAnimation forKey:@"strokeStart"];
-    }
-    self.activeAnimations++;
-}
-
-- (void)applyNextAnimation
-{
-    if ([self.animationQueue count] > 0) {
-        CABasicAnimation *nextAnimation = self.animationQueue[0];
-        [self.animationQueue removeObject:nextAnimation];
-        
-        [self.progressShape removeAllAnimations];
-        [self.progressShape addAnimation:nextAnimation forKey:@"strokeStart"];
-    }
-}
-
-#pragma mark - Basic animation delegate
-
-- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
-{
-    [self applyNextAnimation];
-    self.activeAnimations--;
 }
 
 @end

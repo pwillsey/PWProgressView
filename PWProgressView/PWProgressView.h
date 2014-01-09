@@ -12,6 +12,4 @@
 
 @property (nonatomic, assign) float progress;
 
-- (void)setProgress:(CGFloat)progress animated:(BOOL)animated;
-
 @end
