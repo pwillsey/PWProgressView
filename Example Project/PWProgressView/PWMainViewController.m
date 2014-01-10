@@ -30,6 +30,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    self.mainView.imageView.image = [UIImage imageNamed:@"dog"];
 }
 
 - (void)loadView

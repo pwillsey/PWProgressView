@@ -12,6 +12,7 @@
 
 @interface PWMainView : UIView
 
+@property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) PWProgressView *progressView;
 @property (nonatomic, strong) UISlider *progressSlider;
 

@@ -19,6 +19,11 @@ static const CGFloat PWVerticalSpacing      = 20.0f;
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.imageView = [[UIImageView alloc] init];
+        self.imageView.layer.cornerRadius = 5.0f;
+        self.imageView.clipsToBounds = YES;
+        [self addSubview:self.imageView];
+        
         self.progressView = [[PWProgressView alloc] init];
         [self addSubview:self.progressView];
         
@@ -33,10 +38,12 @@ static const CGFloat PWVerticalSpacing      = 20.0f;
 
 - (void)layoutSubviews
 {
-    self.progressView.frame = CGRectMake(CGRectGetMidX(self.frame) - (PWProgressViewSize.width / 2.0f),
-                                         CGRectGetMidY(self.frame) - (PWProgressViewSize.height / 2.0f),
-                                         PWProgressViewSize.width,
-                                         PWProgressViewSize.height);
+    self.imageView.frame = CGRectMake(CGRectGetMidX(self.frame) - (PWProgressViewSize.width / 2.0f),
+                                      CGRectGetMidY(self.frame) - (PWProgressViewSize.height / 2.0f),
+                                      PWProgressViewSize.width,
+                                      PWProgressViewSize.height);
+    
+    self.progressView.frame = self.imageView.frame;
     
     self.progressSlider.frame = CGRectMake(CGRectGetMidX(self.frame) - (PWProgressSliderSize.width / 2.0f),
                                            CGRectGetMaxY(self.progressView.frame) + PWVerticalSpacing,
