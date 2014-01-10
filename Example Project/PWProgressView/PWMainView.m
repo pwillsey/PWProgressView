@@ -25,6 +25,8 @@ static const CGFloat PWVerticalSpacing      = 20.0f;
         [self addSubview:self.imageView];
         
         self.progressView = [[PWProgressView alloc] init];
+        self.progressView.layer.cornerRadius = 5.0f;
+        self.progressView.clipsToBounds = YES;
         [self addSubview:self.progressView];
         
         self.progressSlider = [[UISlider alloc] init];

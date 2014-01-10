@@ -9,11 +9,10 @@
 #import "PWProgressView.h"
 #import <QuartzCore/QuartzCore.h>
 
-static const CGFloat PWCenterHoleInsetRatio             = 0.1f;
-static const CGFloat PWProgressShapeInsetRatio          = 0.02f;
+static const CGFloat PWCenterHoleInsetRatio             = 0.2f;
+static const CGFloat PWProgressShapeInsetRatio          = 0.03f;
 static const CGFloat PWDefaultAlpha                     = 0.45f;
-static const CGFloat PWDefaultCornerRadius              = 5.0f;
-static const CGFloat PWScaleAnimationScaleFactor        = 2.0f;
+static const CGFloat PWScaleAnimationScaleFactor        = 2.3f;
 static const CFTimeInterval PWScaleAnimationDuration    = 0.5;
 
 @interface PWProgressView ()
@@ -34,8 +33,6 @@ static const CFTimeInterval PWScaleAnimationDuration    = 0.5;
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.layer.cornerRadius = PWDefaultCornerRadius;
-        self.clipsToBounds = YES;
         self.alpha = PWDefaultAlpha;
         
         self.boxShape = [CAShapeLayer layer];
