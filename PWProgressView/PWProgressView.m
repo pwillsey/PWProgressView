@@ -31,7 +31,11 @@ static const CFTimeInterval PWScaleAnimationDuration    = 0.5;
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
-    self = [super initWithFrame:frame];
+    self = [super initWithFrame:CGRectMake(CGRectGetMinX(frame),
+                                           CGRectGetMinY(frame),
+                                           CGRectGetWidth(frame),
+                                           CGRectGetWidth(frame))];
+    
     if (self) {
         self.alpha = PWDefaultAlpha;
         
@@ -88,6 +92,14 @@ static const CFTimeInterval PWScaleAnimationDuration    = 0.5;
                                                          cornerRadius:radius].CGPath;
     
     self.progressShape.lineWidth = radius;
+}
+
+- (void)setFrame:(CGRect)frame
+{
+    [super setFrame:CGRectMake(CGRectGetMinX(frame),
+                               CGRectGetMinY(frame),
+                               CGRectGetWidth(frame),
+                               CGRectGetWidth(frame))];
 }
 
 - (void)setProgress:(float)progress
