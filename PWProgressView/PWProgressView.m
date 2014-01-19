@@ -104,22 +104,24 @@ static const CFTimeInterval PWScaleAnimationDuration    = 0.5;
 
 - (void)setProgress:(float)progress
 {
-    self.progressShape.strokeStart = progress;
+    if ([self pinnedProgress:progress] != _progress) {
+        self.progressShape.strokeStart = progress;
 
-    if (_progress == 1.0f && progress < 1.0f) {
-        [self.boxShape removeAllAnimations];
-    }
+        if (_progress == 1.0f && progress < 1.0f) {
+            [self.boxShape removeAllAnimations];
+        }
 
-    _progress = [self pinnedProgress:progress];
+        _progress = [self pinnedProgress:progress];
 
-    if (_progress == 1.0f) {
-        CABasicAnimation *scaleAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
-        scaleAnimation.toValue = @(PWScaleAnimationScaleFactor);
-        scaleAnimation.duration = PWScaleAnimationDuration;
-        scaleAnimation.removedOnCompletion = NO;
-        scaleAnimation.autoreverses = NO;
-        scaleAnimation.fillMode = kCAFillModeForwards;
-        [self.boxShape addAnimation:scaleAnimation forKey:@"transform.scale"];
+        if (_progress == 1.0f) {
+            CABasicAnimation *scaleAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+            scaleAnimation.toValue = @(PWScaleAnimationScaleFactor);
+            scaleAnimation.duration = PWScaleAnimationDuration;
+            scaleAnimation.removedOnCompletion = NO;
+            scaleAnimation.autoreverses = NO;
+            scaleAnimation.fillMode = kCAFillModeForwards;
+            [self.boxShape addAnimation:scaleAnimation forKey:@"transform.scale"];
+        }
     }
 }
 
