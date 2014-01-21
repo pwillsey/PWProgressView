@@ -128,7 +128,7 @@ static const CFTimeInterval PWScaleAnimationDuration    = 0.5;
 - (float)pinnedProgress:(float)progress
 {
     float pinnedProgress = MAX(0.0f, progress);
-    pinnedProgress = MIN(1.0f, progress);
+    pinnedProgress = MIN(1.0f, pinnedProgress);
     
     return pinnedProgress;
 }
