@@ -31,10 +31,7 @@ static const CFTimeInterval PWScaleAnimationDuration    = 0.5;
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
-    self = [super initWithFrame:CGRectMake(CGRectGetMinX(frame),
-                                           CGRectGetMinY(frame),
-                                           CGRectGetWidth(frame),
-                                           CGRectGetWidth(frame))];
+    self = [super initWithFrame:frame];
     
     if (self) {
         self.alpha = PWDefaultAlpha;
