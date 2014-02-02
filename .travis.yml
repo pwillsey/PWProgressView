@@ -1,5 +1,5 @@
 language: objective-c
-xcode_project: PWProgressView.xcworkspace
+xcode_workspace: PWProgressView.xcworkspace
 xcode_scheme: PWProgressViewTests
 before_install:
     - gem install cocoapods
