@@ -1,6 +1,8 @@
 language: objective-c
 before_install:
   - gem install cocoapods --no-document
+  - gem install xcpretty --no-document
   - cd Example\ Project
 script:
-  - xcodebuild -workspace PWProgressView.xcworkspace -scheme PWProgressView -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+  - xcodebuild -workspace PWProgressView.xcworkspace -scheme PWProgressView -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
+  - xcodebuild test -workspace PWProgressView.xcworkspace -scheme PWProgressView -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
