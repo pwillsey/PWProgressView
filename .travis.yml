@@ -1,1 +1,5 @@
 language: objective-c
+xcode_project: ProgressView.xcworkspace
+xcode_scheme: ProgressViewTests
+before_install:
+	- cd Example\ Project
