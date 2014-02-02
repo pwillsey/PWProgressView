@@ -38,16 +38,6 @@
                ReferencedContainer = "container:PWProgressView.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3D656712189DA42600FCAF5F"
-               BuildableName = "PWProgressView Tests.xctest"
-               BlueprintName = "PWProgressView Tests"
-               ReferencedContainer = "container:PWProgressView.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
