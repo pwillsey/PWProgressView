@@ -1,6 +1,7 @@
 language: objective-c
 xcode_workspace: PWProgressView.xcworkspace
 xcode_scheme: PWProgressView
+xcode_sdk: iphonesimulator
 before_install:
-    - gem install cocoapods
-    - cd Example\ Project
+  - gem install cocoapods --no-document
+  - cd Example\ Project
