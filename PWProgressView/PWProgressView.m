@@ -57,6 +57,8 @@ static const CFTimeInterval PWScaleAnimationDuration    = 0.5;
 
 - (void)layoutSubviews
 {
+    [super layoutSubviews];
+    
     CGFloat centerHoleInset     = PWCenterHoleInsetRatio * CGRectGetWidth(self.bounds);
     CGFloat progressShapeInset  = PWProgressShapeInsetRatio * CGRectGetWidth(self.bounds);
     
