@@ -3,6 +3,7 @@
 PWProgressView is a circular progress indicator inspired by the app install / update animation from iOS 7.
 
 [![Build Status](https://travis-ci.org/pwillsey/PWProgressView.png?branch=master)](https://travis-ci.org/pwillsey/PWProgressView)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 ![pwprogressview](https://f.cloud.github.com/assets/954833/1884927/f929ad12-79b4-11e3-95e4-6dbac782387d.gif)
 
