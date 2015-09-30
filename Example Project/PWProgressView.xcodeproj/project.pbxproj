@@ -14,6 +14,9 @@
 		3D65672D189DA7BD00FCAF5F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DF8D22F18712BBF00243057 /* Foundation.framework */; };
 		3D65672E189DA7BD00FCAF5F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DF8D23318712BBF00243057 /* UIKit.framework */; };
 		3D65673E189DAA0800FCAF5F /* PWProgressViewSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D65673D189DAA0800FCAF5F /* PWProgressViewSpec.m */; };
+		3DC175811BBB850F0070433C /* PWProgressView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC175771BBB850F0070433C /* PWProgressView.framework */; settings = {ASSET_TAGS = (); }; };
+		3DC175951BBB86C60070433C /* PWProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DF8D26218712C3B00243057 /* PWProgressView.m */; settings = {ASSET_TAGS = (); }; };
+		3DC175961BBB86CA0070433C /* PWProgressView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DF8D26118712C3B00243057 /* PWProgressView.h */; settings = {ASSET_TAGS = (); }; };
 		3DF8D23018712BBF00243057 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DF8D22F18712BBF00243057 /* Foundation.framework */; };
 		3DF8D23218712BBF00243057 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DF8D23118712BBF00243057 /* CoreGraphics.framework */; };
 		3DF8D23418712BBF00243057 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DF8D23318712BBF00243057 /* UIKit.framework */; };
@@ -33,7 +36,34 @@
 			remoteGlobalIDString = 3DF8D22B18712BBF00243057;
 			remoteInfo = PWProgressView;
 		};
+		3DC175821BBB850F0070433C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3DF8D22418712BBF00243057 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3DC175761BBB850F0070433C;
+			remoteInfo = "PWProgressView iOS";
+		};
+		3DC175841BBB850F0070433C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3DF8D22418712BBF00243057 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3DF8D22B18712BBF00243057;
+			remoteInfo = PWProgressView;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3DC1758D1BBB850F0070433C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3D1CC283187E59D000C0E305 /* PWMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWMainView.h; sourceTree = "<group>"; };
@@ -43,6 +73,8 @@
 		3D65672A189DA7BD00FCAF5F /* PWProgressViewTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PWProgressViewTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D65672B189DA7BD00FCAF5F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		3D65673D189DAA0800FCAF5F /* PWProgressViewSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PWProgressViewSpec.m; sourceTree = "<group>"; };
+		3DC175771BBB850F0070433C /* PWProgressView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PWProgressView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DC175801BBB850F0070433C /* PWProgressView.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PWProgressView.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DF8D22C18712BBF00243057 /* PWProgressView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PWProgressView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DF8D22F18712BBF00243057 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3DF8D23118712BBF00243057 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -58,8 +90,9 @@
 		3DF8D25F18712C2100243057 /* PWMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PWMainViewController.m; sourceTree = "<group>"; };
 		3DF8D26118712C3B00243057 /* PWProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PWProgressView.h; path = ../../PWProgressView/PWProgressView.h; sourceTree = "<group>"; };
 		3DF8D26218712C3B00243057 /* PWProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PWProgressView.m; path = ../../PWProgressView/PWProgressView.m; sourceTree = "<group>"; };
-		668310D48DEC47CEBB78DC53 /* Pods-PWProgressViewTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PWProgressViewTests.xcconfig"; path = "Pods/Pods-PWProgressViewTests.xcconfig"; sourceTree = "<group>"; };
+		7FAE7C4F2DDC3C14159947BF /* Pods-PWProgressViewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PWProgressViewTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PWProgressViewTests/Pods-PWProgressViewTests.debug.xcconfig"; sourceTree = "<group>"; };
 		87F77BEF1C3C4C6D9A690FCD /* libPods-PWProgressViewTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PWProgressViewTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD40AF57FB340BBAD08E36D6 /* Pods-PWProgressViewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PWProgressViewTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PWProgressViewTests/Pods-PWProgressViewTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +104,21 @@
 				3D65672E189DA7BD00FCAF5F /* UIKit.framework in Frameworks */,
 				3D65672D189DA7BD00FCAF5F /* Foundation.framework in Frameworks */,
 				1964C8DD561C469C9F1811F2 /* libPods-PWProgressViewTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DC175731BBB850F0070433C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DC1757D1BBB850F0070433C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DC175811BBB850F0070433C /* PWProgressView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,7 +160,7 @@
 				3D65672F189DA7BD00FCAF5F /* PWProgressViewTests */,
 				3DF8D22E18712BBF00243057 /* Frameworks */,
 				3DF8D22D18712BBF00243057 /* Products */,
-				668310D48DEC47CEBB78DC53 /* Pods-PWProgressViewTests.xcconfig */,
+				4E954E2BBC3D950726F02057 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +169,8 @@
 			children = (
 				3DF8D22C18712BBF00243057 /* PWProgressView.app */,
 				3D65672A189DA7BD00FCAF5F /* PWProgressViewTests.octest */,
+				3DC175771BBB850F0070433C /* PWProgressView.framework */,
+				3DC175801BBB850F0070433C /* PWProgressView.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -166,7 +216,27 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		4E954E2BBC3D950726F02057 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7FAE7C4F2DDC3C14159947BF /* Pods-PWProgressViewTests.debug.xcconfig */,
+				FD40AF57FB340BBAD08E36D6 /* Pods-PWProgressViewTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		3DC175741BBB850F0070433C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DC175961BBB86CA0070433C /* PWProgressView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		3D656729189DA7BD00FCAF5F /* PWProgressViewTests */ = {
@@ -187,7 +257,44 @@
 			name = PWProgressViewTests;
 			productName = PWProgressViewTests;
 			productReference = 3D65672A189DA7BD00FCAF5F /* PWProgressViewTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
+		};
+		3DC175761BBB850F0070433C /* PWProgressView iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DC175931BBB850F0070433C /* Build configuration list for PBXNativeTarget "PWProgressView iOS" */;
+			buildPhases = (
+				3DC175721BBB850F0070433C /* Sources */,
+				3DC175731BBB850F0070433C /* Frameworks */,
+				3DC175741BBB850F0070433C /* Headers */,
+				3DC175751BBB850F0070433C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PWProgressView iOS";
+			productName = "PWProgressView iOS";
+			productReference = 3DC175771BBB850F0070433C /* PWProgressView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3DC1757F1BBB850F0070433C /* PWProgressView iOS Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DC175941BBB850F0070433C /* Build configuration list for PBXNativeTarget "PWProgressView iOS Tests" */;
+			buildPhases = (
+				3DC1757C1BBB850F0070433C /* Sources */,
+				3DC1757D1BBB850F0070433C /* Frameworks */,
+				3DC1757E1BBB850F0070433C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3DC175831BBB850F0070433C /* PBXTargetDependency */,
+				3DC175851BBB850F0070433C /* PBXTargetDependency */,
+			);
+			name = "PWProgressView iOS Tests";
+			productName = "PWProgressView iOSTests";
+			productReference = 3DC175801BBB850F0070433C /* PWProgressView.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		3DF8D22B18712BBF00243057 /* PWProgressView */ = {
 			isa = PBXNativeTarget;
@@ -196,6 +303,7 @@
 				3DF8D22818712BBF00243057 /* Sources */,
 				3DF8D22918712BBF00243057 /* Frameworks */,
 				3DF8D22A18712BBF00243057 /* Resources */,
+				3DC1758D1BBB850F0070433C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -213,10 +321,18 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = PW;
+				LastTestingUpgradeCheck = 0700;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Peter Willsey";
 				TargetAttributes = {
 					3D656729189DA7BD00FCAF5F = {
+						TestTargetID = 3DF8D22B18712BBF00243057;
+					};
+					3DC175761BBB850F0070433C = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					3DC1757F1BBB850F0070433C = {
+						CreatedOnToolsVersion = 7.0;
 						TestTargetID = 3DF8D22B18712BBF00243057;
 					};
 				};
@@ -234,13 +350,29 @@
 			projectRoot = "";
 			targets = (
 				3DF8D22B18712BBF00243057 /* PWProgressView */,
+				3DC175761BBB850F0070433C /* PWProgressView iOS */,
 				3D656729189DA7BD00FCAF5F /* PWProgressViewTests */,
+				3DC1757F1BBB850F0070433C /* PWProgressView iOS Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		3D656728189DA7BD00FCAF5F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DC175751BBB850F0070433C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DC1757E1BBB850F0070433C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -271,7 +403,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-PWProgressViewTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PWProgressViewTests/Pods-PWProgressViewTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		603037570D40499FBAC4E8F5 /* Check Pods Manifest.lock */ = {
@@ -300,6 +432,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3DC175721BBB850F0070433C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DC175951BBB86C60070433C /* PWProgressView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DC1757C1BBB850F0070433C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3DF8D22818712BBF00243057 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -320,6 +467,16 @@
 			target = 3DF8D22B18712BBF00243057 /* PWProgressView */;
 			targetProxy = 3D656738189DA7BD00FCAF5F /* PBXContainerItemProxy */;
 		};
+		3DC175831BBB850F0070433C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3DC175761BBB850F0070433C /* PWProgressView iOS */;
+			targetProxy = 3DC175821BBB850F0070433C /* PBXContainerItemProxy */;
+		};
+		3DC175851BBB850F0070433C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3DF8D22B18712BBF00243057 /* PWProgressView */;
+			targetProxy = 3DC175841BBB850F0070433C /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -336,7 +493,7 @@
 /* Begin XCBuildConfiguration section */
 		3D65673A189DA7BD00FCAF5F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 668310D48DEC47CEBB78DC53 /* Pods-PWProgressViewTests.xcconfig */;
+			baseConfigurationReference = 7FAE7C4F2DDC3C14159947BF /* Pods-PWProgressViewTests.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PWProgressView.app/PWProgressView";
@@ -359,7 +516,7 @@
 		};
 		3D65673B189DA7BD00FCAF5F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 668310D48DEC47CEBB78DC53 /* Pods-PWProgressViewTests.xcconfig */;
+			baseConfigurationReference = FD40AF57FB340BBAD08E36D6 /* Pods-PWProgressViewTests.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PWProgressView.app/PWProgressView";
@@ -373,6 +530,100 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		3DC1758F1BBB850F0070433C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "PWProgressView/PWProgressView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.peterwillsey.PWProgressView-iOS";
+				PRODUCT_NAME = PWProgressView;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3DC175901BBB850F0070433C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "PWProgressView/PWProgressView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.peterwillsey.PWProgressView-iOS";
+				PRODUCT_NAME = PWProgressView;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3DC175911BBB850F0070433C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "PWProgressViewTests/PWProgressViewTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.peterwillsey.PWProgressView-iOSTests";
+				PRODUCT_NAME = PWProgressView;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PWProgressView.app/PWProgressView";
+			};
+			name = Debug;
+		};
+		3DC175921BBB850F0070433C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "PWProgressViewTests/PWProgressViewTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.peterwillsey.PWProgressView-iOSTests";
+				PRODUCT_NAME = PWProgressView;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PWProgressView.app/PWProgressView";
 			};
 			name = Release;
 		};
@@ -456,6 +707,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PWProgressView/PWProgressView-Prefix.pch";
 				INFOPLIST_FILE = "PWProgressView/PWProgressView-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -469,6 +721,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PWProgressView/PWProgressView-Prefix.pch";
 				INFOPLIST_FILE = "PWProgressView/PWProgressView-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -482,6 +735,24 @@
 			buildConfigurations = (
 				3D65673A189DA7BD00FCAF5F /* Debug */,
 				3D65673B189DA7BD00FCAF5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DC175931BBB850F0070433C /* Build configuration list for PBXNativeTarget "PWProgressView iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DC1758F1BBB850F0070433C /* Debug */,
+				3DC175901BBB850F0070433C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DC175941BBB850F0070433C /* Build configuration list for PBXNativeTarget "PWProgressView iOS Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DC175911BBB850F0070433C /* Debug */,
+				3DC175921BBB850F0070433C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
