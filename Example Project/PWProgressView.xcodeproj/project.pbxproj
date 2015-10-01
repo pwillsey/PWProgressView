@@ -322,7 +322,7 @@
 			attributes = {
 				CLASSPREFIX = PW;
 				LastTestingUpgradeCheck = 0700;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Peter Willsey";
 				TargetAttributes = {
 					3D656729189DA7BD00FCAF5F = {
@@ -495,7 +495,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7FAE7C4F2DDC3C14159947BF /* Pods-PWProgressViewTests.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PWProgressView.app/PWProgressView";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -508,6 +507,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "PWProgressViewTests/PWProgressViewTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.peterwillsey.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -518,7 +518,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FD40AF57FB340BBAD08E36D6 /* Pods-PWProgressViewTests.release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PWProgressView.app/PWProgressView";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -527,6 +526,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = "PWProgressViewTests/PWProgressViewTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.peterwillsey.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -631,7 +631,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -646,6 +645,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -670,7 +670,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -708,6 +707,7 @@
 				GCC_PREFIX_HEADER = "PWProgressView/PWProgressView-Prefix.pch";
 				INFOPLIST_FILE = "PWProgressView/PWProgressView-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pwillsey.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -722,6 +722,7 @@
 				GCC_PREFIX_HEADER = "PWProgressView/PWProgressView-Prefix.pch";
 				INFOPLIST_FILE = "PWProgressView/PWProgressView-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pwillsey.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
