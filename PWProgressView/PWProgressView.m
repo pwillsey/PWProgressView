@@ -12,7 +12,6 @@
 static const CGFloat PWCenterHoleInsetRatio             = 0.2f;
 static const CGFloat PWProgressShapeInsetRatio          = 0.03f;
 static const CGFloat PWDefaultAlpha                     = 0.45f;
-static const CGFloat PWScaleAnimationScaleFactor        = 2.3f;
 static const CFTimeInterval PWScaleAnimationDuration    = 0.5;
 
 @interface PWProgressView ()
@@ -45,8 +44,8 @@ static const CFTimeInterval PWScaleAnimationDuration    = 0.5;
 
         self.progressShape = [CAShapeLayer layer];
         
-        self.progressShape.fillColor   = [UIColor clearColor].CGColor;
-        self.progressShape.strokeColor = [UIColor blackColor].CGColor;
+        self.progressShape.fillColor    = [UIColor clearColor].CGColor;
+        self.progressShape.strokeColor  = [UIColor blackColor].CGColor;
 
         [self.layer addSublayer:self.boxShape];
         [self.layer addSublayer:self.progressShape];
@@ -59,8 +58,10 @@ static const CFTimeInterval PWScaleAnimationDuration    = 0.5;
 {
     [super layoutSubviews];
     
-    CGFloat centerHoleInset     = PWCenterHoleInsetRatio * CGRectGetWidth(self.bounds);
-    CGFloat progressShapeInset  = PWProgressShapeInsetRatio * CGRectGetWidth(self.bounds);
+    CGFloat minSide = MIN(CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds));
+    
+    CGFloat centerHoleInset     = PWCenterHoleInsetRatio * minSide;
+    CGFloat progressShapeInset  = PWProgressShapeInsetRatio * minSide;
     
     CGRect pathRect = CGRectMake(CGPointZero.x,
                                  CGPointZero.y,
@@ -69,11 +70,14 @@ static const CFTimeInterval PWScaleAnimationDuration    = 0.5;
     
     UIBezierPath *path = [UIBezierPath bezierPathWithRect:pathRect];
     
-    [path appendPath:[UIBezierPath bezierPathWithRoundedRect:CGRectMake(centerHoleInset,
-                                                                        centerHoleInset,
-                                                                        CGRectGetWidth(self.bounds) - centerHoleInset * 2,
-                                                                        CGRectGetHeight(self.bounds) - centerHoleInset * 2)
-                                                cornerRadius:(CGRectGetWidth(self.bounds) - centerHoleInset * 2) / 2.0f]];
+    CGFloat width = minSide - (centerHoleInset * 2);
+    CGFloat height = width;
+    
+    [path appendPath:[UIBezierPath bezierPathWithRoundedRect:CGRectMake((CGRectGetWidth(self.bounds) - width) / 2.0f,
+                                                                        (CGRectGetHeight(self.bounds) - height) / 2.0f,
+                                                                        width,
+                                                                        height)
+                                                cornerRadius:(width / 2.0f)]];
     
     [path setUsesEvenOddFillRule:YES];
     
@@ -81,7 +85,7 @@ static const CFTimeInterval PWScaleAnimationDuration    = 0.5;
     self.boxShape.bounds = pathRect;
     self.boxShape.position = CGPointMake(CGRectGetMidX(pathRect), CGRectGetMidY(pathRect));
 
-    CGFloat diameter = CGRectGetWidth(self.bounds) - (2 * centerHoleInset) - (2 * progressShapeInset);
+    CGFloat diameter = minSide - (2 * centerHoleInset) - (2 * progressShapeInset);
     CGFloat radius = diameter / 2.0f;
     
     self.progressShape.path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake((CGRectGetWidth(self.bounds) / 2.0f) - (radius / 2.0f),
@@ -91,14 +95,6 @@ static const CFTimeInterval PWScaleAnimationDuration    = 0.5;
                                                          cornerRadius:radius].CGPath;
     
     self.progressShape.lineWidth = radius;
-}
-
-- (void)setFrame:(CGRect)frame
-{
-    [super setFrame:CGRectMake(CGRectGetMinX(frame),
-                               CGRectGetMinY(frame),
-                               CGRectGetWidth(frame),
-                               CGRectGetWidth(frame))];
 }
 
 - (void)setProgress:(float)progress
@@ -111,10 +107,16 @@ static const CFTimeInterval PWScaleAnimationDuration    = 0.5;
         }
 
         _progress = [self pinnedProgress:progress];
-
+        
         if (_progress == 1.0f) {
+            CGFloat minSide = MIN(CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds));
+            
+            CGFloat centerHoleDiameter =  minSide - (PWCenterHoleInsetRatio * minSide * 2);
+            CGFloat desiredDiameter = 2 * sqrt((powf((CGRectGetWidth(self.bounds) / 2.0f), 2) + powf((CGRectGetHeight(self.bounds) / 2.0f), 2)));
+            CGFloat scaleFactor = desiredDiameter / centerHoleDiameter;
+            
             CABasicAnimation *scaleAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
-            scaleAnimation.toValue = @(PWScaleAnimationScaleFactor);
+            scaleAnimation.toValue = @(scaleFactor);
             scaleAnimation.duration = PWScaleAnimationDuration;
             scaleAnimation.removedOnCompletion = NO;
             scaleAnimation.autoreverses = NO;

@@ -19,16 +19,6 @@ describe(@"PWProgressView", ^{
         progressView = [[PWProgressView alloc] init];
     });
     
-    it(@"Is always square", ^{
-        progressView.frame = (CGRect) {
-            .origin         = CGPointZero,
-            .size.width     = 50.0f,
-            .size.height    = 100.0f
-        };
-        
-        [[theValue(CGRectGetWidth(progressView.frame)) should] equal:theValue(CGRectGetHeight(progressView.frame))];
-    });
-    
     it(@"Pins progress values below 0 to 0", ^{
         progressView.progress = -1.0f;
         
