@@ -22,11 +22,16 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-
 #import <UIKit/UIKit.h>
 
+/**
+ A circular progress indicator inspired by the app install / update animation from iOS 7.
+ */
 @interface PWProgressView : UIView
 
+/**
+ The current progress displayed by the receiver between 0.0 and 1.0.
+ */
 @property (nonatomic, assign) float progress;
 
 @end
