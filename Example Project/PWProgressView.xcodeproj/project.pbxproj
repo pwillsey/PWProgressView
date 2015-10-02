@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1964C8DD561C469C9F1811F2 /* libPods-PWProgressViewTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87F77BEF1C3C4C6D9A690FCD /* libPods-PWProgressViewTests.a */; };
 		3D1CC285187E59D000C0E305 /* PWMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC284187E59D000C0E305 /* PWMainView.m */; };
+		3D422CEB1BBE386B005A9C7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D422CEA1BBE386B005A9C7F /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
 		3D512F6D187FC12E0078A5FD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D512F6C187FC12E0078A5FD /* QuartzCore.framework */; };
 		3D65672C189DA7BD00FCAF5F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D65672B189DA7BD00FCAF5F /* SenTestingKit.framework */; };
 		3D65672D189DA7BD00FCAF5F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DF8D22F18712BBF00243057 /* Foundation.framework */; };
@@ -69,6 +70,7 @@
 		3D1CC283187E59D000C0E305 /* PWMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWMainView.h; sourceTree = "<group>"; };
 		3D1CC284187E59D000C0E305 /* PWMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PWMainView.m; sourceTree = "<group>"; };
 		3D420C25189DBABD0042E58D /* PWProgressViewTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PWProgressViewTests-Info.plist"; sourceTree = "<group>"; };
+		3D422CEA1BBE386B005A9C7F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D512F6C187FC12E0078A5FD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3D65672A189DA7BD00FCAF5F /* PWProgressViewTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PWProgressViewTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D65672B189DA7BD00FCAF5F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -200,6 +202,7 @@
 				3DF8D26118712C3B00243057 /* PWProgressView.h */,
 				3DF8D26218712C3B00243057 /* PWProgressView.m */,
 				3DF8D24118712BBF00243057 /* Images.xcassets */,
+				3D422CEA1BBE386B005A9C7F /* LaunchScreen.storyboard */,
 				3DF8D23618712BBF00243057 /* Supporting Files */,
 			);
 			path = PWProgressView;
@@ -383,6 +386,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D422CEB1BBE386B005A9C7F /* LaunchScreen.storyboard in Resources */,
 				3DF8D23A18712BBF00243057 /* InfoPlist.strings in Resources */,
 				3DF8D24218712BBF00243057 /* Images.xcassets in Resources */,
 			);
@@ -702,7 +706,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PWProgressView/PWProgressView-Prefix.pch";
 				INFOPLIST_FILE = "PWProgressView/PWProgressView-Info.plist";
@@ -717,7 +720,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PWProgressView/PWProgressView-Prefix.pch";
 				INFOPLIST_FILE = "PWProgressView/PWProgressView-Info.plist";
