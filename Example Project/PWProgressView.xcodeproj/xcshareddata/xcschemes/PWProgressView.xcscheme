@@ -32,8 +32,8 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3D656729189DA7BD00FCAF5F"
-               BuildableName = "PWProgressViewTests.octest"
+               BlueprintIdentifier = "3D958D971BBF2FB6002F33FA"
+               BuildableName = "PWProgressViewTests.xctest"
                BlueprintName = "PWProgressViewTests"
                ReferencedContainer = "container:PWProgressView.xcodeproj">
             </BuildableReference>

@@ -4,3 +4,7 @@
 target :PWProgressViewTests, :exclusive => true do
 	pod 'Kiwi'
 end
+
+target 'PWProgressView iOS Tests' do
+	pod 'Kiwi'
+end
