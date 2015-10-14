@@ -3,7 +3,7 @@ language: objective-c
 before_install:
   - gem install cocoapods --no-document
   - gem install xcpretty --no-document
-  - cd Example\ Project
+  - pod install --project-directory=Example\ Project
 script:
-  - xcodebuild -workspace PWProgressView.xcworkspace -scheme PWProgressView -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
-  - xcodebuild test -workspace PWProgressView.xcworkspace -scheme PWProgressView -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
+  - set -o pipefail && xcodebuild test -workspace Example\ Project/PWProgressView.xcworkspace -scheme PWProgressView -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
+  - pod lib lint --quick
