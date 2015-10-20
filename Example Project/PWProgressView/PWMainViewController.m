@@ -28,6 +28,7 @@
 
 @interface PWMainViewController ()
 @property (nonatomic, strong) PWMainView *mainView;
+@property (nonatomic, strong) UITapGestureRecognizer *tapGestureRecognizer;
 @end
 
 @implementation PWMainViewController
@@ -36,7 +37,6 @@
 {
     self = [super init];
     if (self) {
-        
     }
     
     return self;
@@ -48,6 +48,9 @@
 	// Do any additional setup after loading the view.
     
     self.mainView.imageView.image = [UIImage imageNamed:@"dog"];
+    
+    self.tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(progressViewTapped:)];
+    [self.mainView.progressView addGestureRecognizer:self.tapGestureRecognizer];
 }
 
 - (void)loadView
@@ -71,6 +74,13 @@
     float progress = self.mainView.progressSlider.value;
     
     [self.mainView.progressView setProgress:progress];
+}
+
+- (void)progressViewTapped:(UITapGestureRecognizer *)sender
+{
+    if (sender.state == UIGestureRecognizerStateEnded) {
+        self.mainView.progressView.paused = !self.mainView.progressView.paused;
+    }
 }
 
 @end

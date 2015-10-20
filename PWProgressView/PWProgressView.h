@@ -34,4 +34,9 @@
  */
 @property (nonatomic, assign) float progress;
 
+/**
+ Shows and hides a pause shape overlaid on the progress view.
+ */
+@property (nonatomic, assign) BOOL paused;
+
 @end
